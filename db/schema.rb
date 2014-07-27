@@ -14,10 +14,31 @@
 ActiveRecord::Schema.define(version: 20140726092933) do
 
   create_table "people", force: true do |t|
-    t.string   "name"
-    t.string   "email",            null: false
-    t.string   "crypted_password", null: false
-    t.string   "salt",             null: false
+    t.string   "login",                                null: false
+    t.string   "email",                                null: false
+    t.string   "crypted_password",                     null: false
+    t.string   "salt",                                 null: false
+    t.string   "first_name",                           null: false
+    t.string   "middle_name"
+    t.string   "last_name",                            null: false
+    t.string   "ssn"
+    t.date     "birthdate"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "address_line_3"
+    t.string   "telephone_mobile"
+    t.string   "telephone_office"
+    t.string   "telephone_private"
+    t.string   "personnel_number"
+    t.date     "first_work_day"
+    t.float    "working_hours_total",                  null: false
+    t.float    "working_hours_per_day",                null: false
+    t.integer  "holidays",                             null: false
+    t.integer  "holidays_left",                        null: false
+    t.float    "hours",                  default: 0.0, null: false
+    t.float    "overtime_hours",         default: 0.0, null: false
+    t.text     "public_job_description"
+    t.text     "private_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,13 +1,50 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: Test One
+  login: test_one
   email: test1@example.com
   crypted_password: ''
   salt: ''
+  first_name: One
+  middle_name: J
+  last_name: Simpson
+  ssn: 123456789
+  birthdate: 1970-01-01
+  address_line_1: At Home
+  address_line_2: 1234 HOME
+  telephone_mobile: +43664664664
+  telephone_office: 2000
+  telephone_private: +43123456789
+  personnel_number: 123
+  first_work_day: 2000-01-01
+  working_hours_total: 40
+  working_hours_per_day: 8
+  holidays: 25
+  holidays_left: 10
+  hours: 40
+  overtime_hours: 0
+  public_job_description: Should work
+  private_notes: nice
 
 two:
-  name: Test Two
+  login: test_two
   email: test2@example.com
   crypted_password: ''
   salt: ''
+  first_name: Old
+  last_name: Shatterhand
+  ssn: 987654312
+  birthdate: 1978-03-03
+  address_line_1: Somewhere
+  address_line_2: 4321 ELSE
+  telephone_mobile: +312314
+  telephone_office: 3000
+  personnel_number: 234
+  first_work_day: 2008-04-01
+  working_hours_total: 20
+  working_hours_per_day: 8
+  holidays: 20
+  holidays_left: 20
+  hours: 20
+  overtime_hours: 30
+  public_job_description: Should work hard
