@@ -1,12 +1,16 @@
 class PeopleController < ApplicationController
   def new
+    @person = Person.new
   end
 
   def create
     @person = Person.new(person_params)
 
-    @person.save
-    redirect_to @person
+    if @person.save
+      redirect_to root_url, :notice => "Signed up!"
+    else
+      render :new
+    end
   end
 
   def show
@@ -15,6 +19,6 @@ class PeopleController < ApplicationController
 
   private
     def person_params
-      params.require(:person).permit(:name)
+      params.require(:person).permit(:name, :email, :password, :password_confirmation)
     end
 end
