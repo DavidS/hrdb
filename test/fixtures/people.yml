@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Test One
+  email: test1@example.com
+  crypted_password: ''
+  salt: ''
 
 two:
-  name: MyString
+  name: Test Two
+  email: test2@example.com
+  crypted_password: ''
+  salt: ''

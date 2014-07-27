@@ -15,8 +15,13 @@ ActiveRecord::Schema.define(version: 20140726092933) do
 
   create_table "people", force: true do |t|
     t.string   "name"
+    t.string   "email",            null: false
+    t.string   "crypted_password", null: false
+    t.string   "salt",             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "people", ["email"], name: "index_people_on_email", unique: true
 
 end
