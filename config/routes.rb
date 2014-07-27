@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  # authentication routes for sorcery
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login"  => "sessions#new", :as => "login"
+  get "signup" => "people#new", :as => "signup"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -17,6 +22,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :people
+  resources :sessions
 
   # Example resource route with options:
   #   resources :products do
