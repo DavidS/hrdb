@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 # required for travis
-gem 'rake', group: [:test]
+gem 'rake', group: :test
 
 # authentication, require rails 4.1 compatible version
 gem 'sorcery', '>= 0.8.6'
