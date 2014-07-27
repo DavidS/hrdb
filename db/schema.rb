@@ -11,12 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726092933) do
+ActiveRecord::Schema.define(version: 20140727075101) do
 
   create_table "people", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "login"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.integer  "login_count"
+    t.datetime "last_request_at"
+    t.datetime "last_login_at"
+    t.datetime "current_login_at"
+    t.string   "last_login_ip"
+    t.string   "current_login_ip"
   end
+
+  add_index "people", ["last_request_at"], name: "index_people_on_last_request_at"
+  add_index "people", ["login"], name: "index_people_on_login"
+  add_index "people", ["persistence_token"], name: "index_people_on_persistence_token"
+
+  create_table "person_sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "person_sessions", ["session_id"], name: "index_person_sessions_on_session_id"
+  add_index "person_sessions", ["updated_at"], name: "index_person_sessions_on_updated_at"
 
 end

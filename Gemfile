@@ -40,3 +40,5 @@ gem 'spring',        group: :development
 
 # required for travis
 gem 'rake', group: [:test]
+
+gem 'authlogic', '>= 3.4.0'

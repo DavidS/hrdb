@@ -1,4 +1,7 @@
 class PeopleController < ApplicationController
+  before_filter :require_no_person, :only => [:new, :create]
+  before_filter :require_person, :only => [:show, :edit, :update]
+
   def new
   end
 
