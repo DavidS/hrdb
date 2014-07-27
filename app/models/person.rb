@@ -7,4 +7,8 @@ class Person < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_presence_of :email
   validates_uniqueness_of :email
+
+  def full_name
+    [ first_name, middle_name, last_name ].compact.join(' ')
+  end
 end
