@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 
 # required for travis
 gem 'rake', group: :test
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 # authentication, require rails 4.1 compatible version
 gem 'sorcery', '>= 0.8.6'
