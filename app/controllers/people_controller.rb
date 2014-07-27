@@ -44,7 +44,10 @@ class PeopleController < ApplicationController
 
   def search_by_name
     @people = Person.where("last_name LIKE '%' || ? || '%'", params[:name]) || []
-    render :index
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @people.pluck(:id) }
+    end
   end
 
   private
