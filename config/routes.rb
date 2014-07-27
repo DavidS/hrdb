@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :people
+  get "/people/search/:name", :to => "people#search_by_name"
   resources :projects
   resources :sessions
 

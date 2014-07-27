@@ -42,6 +42,11 @@ class PeopleController < ApplicationController
     redirect_to person_path
   end
 
+  def search_by_name
+    @people = Person.where("last_name LIKE '%' || ? || '%'", params[:name]) || []
+    render :index
+  end
+
   private
     def person_params
       params.require(:person).permit(:login, :email, :password,
