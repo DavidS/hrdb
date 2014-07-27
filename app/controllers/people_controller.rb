@@ -1,4 +1,8 @@
 class PeopleController < ApplicationController
+  def index
+    @people = Person.all
+  end
+
   def new
     @person = Person.new
   end
@@ -7,7 +11,7 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
 
     if @person.save
-      redirect_to root_url, :notice => "Signed up!"
+      redirect_to people_path
     else
       render :new
     end
@@ -15,6 +19,27 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id])
+  end
+
+  def edit
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    @person = Person.find(params[:id])
+    @person.update(person_params)
+
+    if @person.save
+      redirect_to people_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @person = Person.find(params[:id])
+    @person.destroy
+    redirect_to person_path
   end
 
   private

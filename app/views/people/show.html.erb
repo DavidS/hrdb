@@ -1,5 +1,14 @@
 <p>
   <strong>Name:</strong>
-  <%= @person.name %>
+  <%= @person.full_name %>
 </p>
 
+<p>A nice person.</p>
+
+<p><strong>Projects:</strong><ul>
+<% @person.projects.each do |project| %>
+<li><%= project.name %></li>
+<% end %>
+</ul></p>
+
+<p><%= link_to "Edit!", edit_person_path %>
