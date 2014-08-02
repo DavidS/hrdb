@@ -1,4 +1,4 @@
-<h1>People</h1>
+<h1>Listing people</h1>
 
 <div id="people_search">
   <%= form_tag people_path, :method => :get do %>
@@ -7,10 +7,70 @@
   <% end -%>
 </div>
 
-<ul>
-<% @people.each do |person| %>
-<li><%= link_to person.full_name, person %> | <%= link_to "Edit", edit_person_path(person) %> | <%= link_to "Destroy", person, method: :delete %></li>
-<% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th>Email</th>
+      <th>First name</th>
+      <th>Middle name</th>
+      <th>Last name</th>
+      <th>Ssn</th>
+      <th>Birthdate</th>
+      <th>Address line 1</th>
+      <th>Address line 2</th>
+      <th>Address line 3</th>
+      <th>Telephone mobile</th>
+      <th>Telephone office</th>
+      <th>Telephone private</th>
+      <th>Personnel number</th>
+      <th>First work day</th>
+      <th>Working hours total</th>
+      <th>Working hours per day</th>
+      <th>Holidays</th>
+      <th>Holidays left</th>
+      <th>Hours</th>
+      <th>Overtime hours</th>
+      <th>Job description</th>
+      <th>Internal notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<p><%= link_to 'New', new_person_path %></p>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.login %></td>
+        <td><%= person.email %></td>
+        <td><%= person.first_name %></td>
+        <td><%= person.middle_name %></td>
+        <td><%= person.last_name %></td>
+        <td><%= person.ssn %></td>
+        <td><%= person.birthdate %></td>
+        <td><%= person.address_line_1 %></td>
+        <td><%= person.address_line_2 %></td>
+        <td><%= person.address_line_3 %></td>
+        <td><%= person.telephone_mobile %></td>
+        <td><%= person.telephone_office %></td>
+        <td><%= person.telephone_private %></td>
+        <td><%= person.personnel_number %></td>
+        <td><%= person.first_work_day %></td>
+        <td><%= person.working_hours_total %></td>
+        <td><%= person.working_hours_per_day %></td>
+        <td><%= person.holidays %></td>
+        <td><%= person.holidays_left %></td>
+        <td><%= person.hours %></td>
+        <td><%= person.overtime_hours %></td>
+        <td><%= person.job_description %></td>
+        <td><%= person.internal_notes %></td>
+        <td><%= link_to 'Show', person %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Person', new_person_path %>

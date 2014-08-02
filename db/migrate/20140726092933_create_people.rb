@@ -18,7 +18,6 @@ class CreatePeople < ActiveRecord::Migration
       t.string :address_line_1
       t.string :address_line_2
       t.string :address_line_3
-
       t.string :telephone_mobile
       t.string :telephone_office
       t.string :telephone_private
@@ -33,12 +32,11 @@ class CreatePeople < ActiveRecord::Migration
       t.float :hours, :null => false, :default => 0
       t.float :overtime_hours, :null => false, :default => 0
 
-      t.text :public_job_description # visible for all
-      t.text :private_notes # only visible for HR
+      t.text :job_description # visible to all
+      t.text :internal_notes  # only visible to HR
 
       t.timestamps
     end
-
     add_index :people, :email, unique: true
   end
 end

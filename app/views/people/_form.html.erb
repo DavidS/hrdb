@@ -1,144 +1,117 @@
-<%= form_for @person do |f| %>
-
+<%= form_for(@person) do |f| %>
   <% if @person.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
       <ul>
-        <% for message in @person.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
+      <% @person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
   <% end %>
 
-  <p>
+  <div class="field">
     <%= f.label :login %><br>
     <%= f.text_field :login %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :password %><br>
     <%= f.password_field :password %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :middle_name %><br>
     <%= f.text_field :middle_name %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :ssn %><br>
     <%= f.text_field :ssn %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :birthdate %><br>
-    <%= f.date_field :birthdate %>
-  </p>
-
-  <p>
+    <%= f.date_select :birthdate %>
+  </div>
+  <div class="field">
     <%= f.label :address_line_1 %><br>
     <%= f.text_field :address_line_1 %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :address_line_2 %><br>
     <%= f.text_field :address_line_2 %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :address_line_3 %><br>
     <%= f.text_field :address_line_3 %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :telephone_mobile %><br>
     <%= f.text_field :telephone_mobile %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :telephone_office %><br>
     <%= f.text_field :telephone_office %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :telephone_private %><br>
     <%= f.text_field :telephone_private %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :personnel_number %><br>
     <%= f.text_field :personnel_number %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :first_work_day %><br>
-    <%= f.date_field :first_work_day %>
-  </p>
-
-  <p>
+    <%= f.date_select :first_work_day %>
+  </div>
+  <div class="field">
     <%= f.label :working_hours_total %><br>
     <%= f.text_field :working_hours_total %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :working_hours_per_day %><br>
     <%= f.text_field :working_hours_per_day %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :holidays %><br>
-    <%= f.text_field :holidays %>
-  </p>
-
-  <p>
+    <%= f.number_field :holidays %>
+  </div>
+  <div class="field">
     <%= f.label :holidays_left %><br>
-    <%= f.text_field :holidays_left %>
-  </p>
-
-  <p>
+    <%= f.number_field :holidays_left %>
+  </div>
+  <div class="field">
     <%= f.label :hours %><br>
     <%= f.text_field :hours %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :overtime_hours %><br>
     <%= f.text_field :overtime_hours %>
-  </p>
-
-  <p>
-    <%= f.label :public_job_description %><br>
-    <%= f.text_area :public_job_description %>
-  </p>
-
-  <p>
-    <%= f.label :private_notes %><br>
-    <%= f.text_area :private_notes %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
+    <%= f.label :job_description %><br>
+    <%= f.text_area :job_description %>
+  </div>
+  <div class="field">
+    <%= f.label :internal_notes %><br>
+    <%= f.text_area :internal_notes %>
+  </div>
+  <div class="actions">
     <%= f.submit %>
-  </p>
-
+  </div>
 <% end %>
-

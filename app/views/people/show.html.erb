@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <p>
   <strong>Name:</strong>
   <%= @person.full_name %>
@@ -5,10 +7,130 @@
 
 <p>A nice person.</p>
 
-<p><strong>Projects:</strong><ul>
-<% @person.projects.each do |project| %>
-<li><%= project.name %></li>
-<% end %>
-</ul></p>
+<p>
+  <strong>Login:</strong>
+  <%= @person.login %>
+</p>
 
-<p><%= link_to "Edit!", edit_person_path %>
+<p>
+  <strong>Email:</strong>
+  <%= @person.email %>
+</p>
+
+<p>
+  <strong>Crypted password:</strong>
+  <%= @person.crypted_password %>
+</p>
+
+<p>
+  <strong>Salt:</strong>
+  <%= @person.salt %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @person.first_name %>
+</p>
+
+<p>
+  <strong>Middle name:</strong>
+  <%= @person.middle_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @person.last_name %>
+</p>
+
+<p>
+  <strong>Ssn:</strong>
+  <%= @person.ssn %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @person.birthdate %>
+</p>
+
+<p>
+  <strong>Address line 1:</strong>
+  <%= @person.address_line_1 %>
+</p>
+
+<p>
+  <strong>Address line 2:</strong>
+  <%= @person.address_line_2 %>
+</p>
+
+<p>
+  <strong>Address line 3:</strong>
+  <%= @person.address_line_3 %>
+</p>
+
+<p>
+  <strong>Telephone mobile:</strong>
+  <%= @person.telephone_mobile %>
+</p>
+
+<p>
+  <strong>Telephone office:</strong>
+  <%= @person.telephone_office %>
+</p>
+
+<p>
+  <strong>Telephone private:</strong>
+  <%= @person.telephone_private %>
+</p>
+
+<p>
+  <strong>Personnel number:</strong>
+  <%= @person.personnel_number %>
+</p>
+
+<p>
+  <strong>First work day:</strong>
+  <%= @person.first_work_day %>
+</p>
+
+<p>
+  <strong>Working hours total:</strong>
+  <%= @person.working_hours_total %>
+</p>
+
+<p>
+  <strong>Working hours per day:</strong>
+  <%= @person.working_hours_per_day %>
+</p>
+
+<p>
+  <strong>Holidays:</strong>
+  <%= @person.holidays %>
+</p>
+
+<p>
+  <strong>Holidays left:</strong>
+  <%= @person.holidays_left %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @person.hours %>
+</p>
+
+<p>
+  <strong>Overtime hours:</strong>
+  <%= @person.overtime_hours %>
+</p>
+
+<p>
+  <strong>Job description:</strong>
+  <%= @person.job_description %>
+</p>
+
+<p>
+  <strong>Internal notes:</strong>
+  <%= @person.internal_notes %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
