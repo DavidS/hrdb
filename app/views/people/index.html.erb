@@ -1,5 +1,12 @@
 <h1>People</h1>
 
+<div id="people_search">
+  <%= form_tag people_path, :method => :get do %>
+    <%= auto_complete_field_tag_jquery(:search, params[:search], {:placeholder => "Type Space For Search Options"}) %>
+    <button id='submit_search' style="font-size: 12px;">Search</button>
+  <% end -%>
+</div>
+
 <ul>
 <% @people.each do |person| %>
 <li><%= link_to person.full_name, person %> | <%= link_to "Edit", edit_person_path(person) %> | <%= link_to "Destroy", person, method: :delete %></li>

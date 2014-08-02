@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -44,3 +45,6 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 
 # authentication, require rails 4.1 compatible version
 gem 'sorcery', '>= 0.8.6'
+
+# search syntax and autocompletion for search boxes
+gem "scoped_search"

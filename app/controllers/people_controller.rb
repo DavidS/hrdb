@@ -1,6 +1,18 @@
 class PeopleController < ApplicationController
   def index
-    @people = Person.all
+    @people = Person.search_for(params[:search], :order => params[:order])
+  rescue => e
+    flash[:error] = e.to_s
+    @people = Person.search_for ''
+  end
+
+  def auto_complete_search
+    begin
+      @items = Person.complete_for(params[:search])
+    rescue ScopedSearch::QueryNotSupported => e
+      @items = [{:error =>e.to_s}]
+    end
+    render :json => @items
   end
 
   def new

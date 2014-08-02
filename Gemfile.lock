@@ -52,6 +52,8 @@ GEM
     jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.0)
+      railties (>= 3.2.16)
     json (1.8.1)
     jwt (1.0.0)
     mail (2.5.4)
@@ -97,6 +99,8 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
+    scoped_search (2.7.1)
+      activerecord (>= 2.1.0)
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
@@ -142,9 +146,11 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-ui-rails
   rails (= 4.1.4)
   rake
   sass-rails (~> 4.0.3)
+  scoped_search
   sdoc (~> 0.4.0)
   sorcery (>= 0.8.6)
   spring

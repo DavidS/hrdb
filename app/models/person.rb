@@ -8,6 +8,8 @@ class Person < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
 
+  scoped_search :on => [ :first_name, :last_name ]
+
   def full_name
     [ first_name, middle_name, last_name ].compact.join(' ')
   end
