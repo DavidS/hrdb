@@ -1,26 +1,6 @@
-<h1>Edit Project</h1>
+<h1>Editing project</h1>
 
-<%= form_for :project, url: @project, method: :put do |f| %>
+<%= render 'form' %>
 
-  <% if @project.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @project.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
-
+<%= link_to 'Show', @project %> |
+<%= link_to 'Back', projects_path %>

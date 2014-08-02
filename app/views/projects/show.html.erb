@@ -1,9 +1,15 @@
-<h1>Project "<%= @project.name %>"</h1>
+<p id="notice"><%= notice %></p>
 
-<p>A nice project. <%= link_to "Edit it!", edit_project_path %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
 
 <p><ul>
 <% @project.people.each do |person| %>
 <li><%= person.full_name %></li>
 <% end %>
 </ul></p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
