@@ -28,7 +28,9 @@ Rails.application.routes.draw do
 
   resources :projects do
     get :auto_complete_search, :on => :collection
+    get :auto_complete_people_search, :on => :collection
   end
+  post "/projects/:id/add_person/:person_id", :to => "projects#add_person", :as => :project_add_person
 
   resources :sessions
 

@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :add_person, :edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
@@ -19,9 +19,33 @@ class ProjectsController < ApplicationController
     render :json => @items
   end
 
+  def auto_complete_people_search
+    begin
+      @items = Person.complete_for(params[:people_search])
+    rescue ScopedSearch::QueryNotSupported => e
+      @items = [{:error =>e.to_s}]
+    end
+    render :json => @items
+  end
+
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @searched_people = params.has_key?(:people_search) ? Person.search_for(params[:people_search], :order => params[:people_order]) : []
+  end
+
+  def add_person
+    @project.people << Person.find(params[:person_id])
+
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to @project, notice: 'Person was successfully added.' }
+        format.json { render :show, status: :added, location: @project }
+      else
+        format.html { render :show }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # GET /projects/new

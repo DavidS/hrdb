@@ -11,5 +11,18 @@
 <% end %>
 </ul></p>
 
+<div id="add_people_search">
+  <%= form_tag project_path(@project), :method => :get do %>
+    <%= auto_complete_field_tag_jquery(:people_search, params[:people_search], {:placeholder => "Type Space For Search Options"}) %>
+    <button id='submit_search' style="font-size: 12px;">Search</button>
+  <% end -%>
+</div>
+
+<p><ul>
+<% @searched_people and @searched_people.each do |person| %>
+<li><%= person.full_name %>: <%= link_to 'Add', project_add_person_path(@project, person.id), method: :post %></li>
+<% end %>
+</ul></p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
