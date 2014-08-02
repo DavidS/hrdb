@@ -33,8 +33,7 @@ RSpec.describe "people/show", :type => :view do
     render
     expect(rendered).to match(/Login/)
     expect(rendered).to match(/Email/)
-    expect(rendered).to_not match(/Password/)
-    expect(rendered).to match(/Salt/)
+    expect(rendered).to_not match(/password/i)
     expect(rendered).to match(/First Name/)
     expect(rendered).to match(/Middle Name/)
     expect(rendered).to match(/Last Name/)
