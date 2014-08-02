@@ -26,7 +26,10 @@ Rails.application.routes.draw do
   end
   get "/people/search/:name", :to => "people#search_by_name"
 
-  resources :projects
+  resources :projects do
+    get :auto_complete_search, :on => :collection
+  end
+
   resources :sessions
 
   # Example resource route with options:

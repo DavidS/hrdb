@@ -4,7 +4,19 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.search_for(params[:search], :order => params[:order])
+  rescue => e
+    flash[:error] = e.to_s
+    @projects = Project.search_for ''
+  end
+
+  def auto_complete_search
+    begin
+      @items = Project.complete_for(params[:search])
+    rescue ScopedSearch::QueryNotSupported => e
+      @items = [{:error =>e.to_s}]
+    end
+    render :json => @items
   end
 
   # GET /projects/1
