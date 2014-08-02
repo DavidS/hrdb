@@ -24,11 +24,30 @@ RSpec.describe PeopleController, :type => :controller do
   # Person. As you add validations to Person, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      :login => 'test',
+      :email => 'test@example.com',
+      :password => 'foo',
+      :first_name => 'First Name',
+      :last_name => 'Last Name',
+      :working_hours_total => 1.5,
+      :working_hours_per_day => 2.5,
+      :holidays => 1,
+      :holidays_left => 2,
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { :login => 'test',
+      :email => '',
+      :password => 'foo',
+      :first_name => 'First Name',
+      :last_name => 'Last Name',
+      :working_hours_total => 1.5,
+      :working_hours_per_day => 2.5,
+      :holidays => 1,
+      :holidays_left => 2,
+      }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +122,24 @@ RSpec.describe PeopleController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          :login => 'test',
+          :email => 'test@example.com',
+          :password => 'foo_bar',
+          :first_name => 'New First Name',
+          :last_name => 'Last Name',
+          :working_hours_total => 1.5,
+          :working_hours_per_day => 2.5,
+          :holidays => 1,
+          :holidays_left => 2,
+        }
       }
 
       it "updates the requested person" do
         person = Person.create! valid_attributes
         put :update, {:id => person.to_param, :person => new_attributes}, valid_session
         person.reload
-        skip("Add assertions for updated state")
+        expect(person.first_name).to eq('New First Name')
       end
 
       it "assigns the requested person as @person" do
