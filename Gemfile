@@ -56,3 +56,6 @@ gem 'sorcery', '>= 0.8.6'
 
 # search syntax and autocompletion for search boxes
 gem "scoped_search"
+
+# required on windows
+gem "tzinfo-data"
