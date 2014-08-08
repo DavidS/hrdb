@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  include DefaultResponses
+
   before_action :set_project, only: [:show, :add_person, :edit, :update, :destroy]
 
   # GET /projects
@@ -36,16 +38,7 @@ class ProjectsController < ApplicationController
 
   def add_person
     @project.people << Person.find(params[:person_id])
-
-    respond_to do |format|
-      if @project.save
-        format.html { redirect_to @project, notice: 'Person was successfully added.' }
-        format.json { render :show, status: :added, location: @project }
-      else
-        format.html { render :show }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
-    end
+    default_save_response @project
   end
 
   # GET /projects/new
@@ -61,40 +54,20 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-
-    respond_to do |format|
-      if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render :show, status: :created, location: @project }
-      else
-        format.html { render :new }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
-    end
+    default_save_response @project
   end
 
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
-    respond_to do |format|
-      if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project }
-      else
-        format.html { render :edit }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
-    end
+    default_update_response @project, project_params
   end
 
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
     @project.destroy
-    respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    default_destroy_response projects_url, 'Project was successfully destroyed.'
   end
 
   private
