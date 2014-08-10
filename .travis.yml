@@ -5,6 +5,8 @@ rvm:
   - 1.9.3
   # - jruby-19mode # chokes on sqlite
 addons:
-   code_climate:
-     repo_token: 81415560c1749c5115942949800802e1146a4654402f7a9d739dac8f9d4b0b30
-
+  code_climate:
+    repo_token: 81415560c1749c5115942949800802e1146a4654402f7a9d739dac8f9d4b0b30
+script:
+  - bundle exec rubocop
+  - bundle exec rake spec
