@@ -1,24 +1,17 @@
 class PeopleController < ApplicationController
   include DefaultResponses
+  include DefaultSearch
 
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   # GET /people
   # GET /people.json
   def index
-    @people = Person.search_for(params[:search], :order => params[:order])
-  rescue => e
-    flash[:error] = e.to_s
-    @people = Person.search_for ''
+    @people = default_index(Person, params)
   end
 
   def auto_complete_search
-    begin
-      @items = Person.complete_for(params[:search])
-    rescue ScopedSearch::QueryNotSupported => e
-      @items = [{:error =>e.to_s}]
-    end
-    render :json => @items
+    auto_complete_search_impl(Person, params[:search])
   end
 
   # GET /people/1

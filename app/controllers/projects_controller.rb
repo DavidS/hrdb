@@ -1,33 +1,21 @@
 class ProjectsController < ApplicationController
   include DefaultResponses
+  include DefaultSearch
 
   before_action :set_project, only: [:show, :add_person, :edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.search_for(params[:search], :order => params[:order])
-  rescue => e
-    flash[:error] = e.to_s
-    @projects = Project.search_for ''
+    @projects = default_index(Project, params)
   end
 
   def auto_complete_search
-    begin
-      @items = Project.complete_for(params[:search])
-    rescue ScopedSearch::QueryNotSupported => e
-      @items = [{:error =>e.to_s}]
-    end
-    render :json => @items
+    auto_complete_search_impl(Project, params[:search])
   end
 
   def auto_complete_people_search
-    begin
-      @items = Person.complete_for(params[:people_search])
-    rescue ScopedSearch::QueryNotSupported => e
-      @items = [{:error =>e.to_s}]
-    end
-    render :json => @items
+    auto_complete_search_impl(Person, params[:people_search])
   end
 
   # GET /projects/1
