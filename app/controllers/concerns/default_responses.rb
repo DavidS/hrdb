@@ -1,28 +1,27 @@
+# a collection of default responses to reduce clutter in the controllers
 module DefaultResponses
   extend ActiveSupport::Concern
 
-  def default_save_response(model)
+  def redirect_or_render_on_action(model, success_message, error_view)
     respond_to do |format|
-      if model.save
-        format.html { redirect_to model, notice: '%s was successfully created.' % model.class }
+      if yield
+        format.html { redirect_to model, notice: success_message }
         format.json { render :show, status: :created, location: model }
       else
-        format.html { render :new }
+        format.html { render error_view }
         format.json { render json: model.errors, status: :unprocessable_entity }
       end
     end
   end
 
+  def default_save_response(model)
+    msg = format('%s was successfully created.', model.class)
+    redirect_or_render_on_action(model, msg, :new) { model.save }
+  end
+
   def default_update_response(model, params)
-    respond_to do |format|
-      if model.update(params)
-        format.html { redirect_to model, notice: '%s was successfully updated.' % model.class }
-        format.json { render :show, status: :ok, location: model }
-      else
-        format.html { render :edit }
-        format.json { render json: model.errors, status: :unprocessable_entity }
-      end
-    end
+    msg = format('%s was successfully updated.', model.class)
+    redirect_or_render_on_action(model, msg, :edit) { model.update(params) }
   end
 
   def default_destroy_response(destination_url, success_msg)
