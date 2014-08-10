@@ -9,6 +9,7 @@ AllCops:
     - 'db/**/*'
     - 'script/**/*'
     - 'spec/**/*'
+    - 'vendor/**/*'
 
 Style/LineLength:
   Max: 100
