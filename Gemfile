@@ -24,15 +24,32 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+# install this group when developing hrdb
+# This will not be installed on travis
+group :development do
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 
-# Convenient for development
-gem 'rspec-rails', group: [:development, :test]
-group :test do
+  # run guard to get live feedback on your changes
   gem 'guard-rspec'
   # required for guard
   gem 'rb-readline'
+end
+
+# install this group when running the tests
+group :test do
+  # required for travis
+  gem 'rake'
+  gem "codeclimate-test-reporter"
+end
+
+# add gems that are both used for development and test
+group :test, :development do
+  # Proper testing syntax
+  gem 'rspec-rails'
+
+  # check for style issues
+  gem 'rubocop'
 end
 
 # Use ActiveModel has_secure_password
@@ -46,10 +63,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-# required for travis
-gem 'rake', group: :test
-gem "codeclimate-test-reporter", group: :test, require: nil
 
 # authentication, require rails 4.1 compatible version
 gem 'sorcery', '>= 0.8.6'
