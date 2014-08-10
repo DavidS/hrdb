@@ -1,5 +1,7 @@
+# Homepage
 class WelcomeController < ApplicationController
-  #before_filter :require_login, :only => :index
+  # No login required here
+  # before_filter :require_login, :only => :index
 
   def index
   end

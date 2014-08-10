@@ -1,16 +1,18 @@
+# A person of interest
+# Can login and use the interface
 class Person < ActiveRecord::Base
   authenticates_with_sorcery!
 
   has_and_belongs_to_many :projects
 
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
-  validates_presence_of :email
-  validates_uniqueness_of :email
+  validates :password, confirmation: true
+  # password doesn't have to be entered on each update
+  validates :password, presence: true, on: :create
+  validates :email, presence: true, uniqueness: true
 
-  scoped_search :on => [ :first_name, :last_name ]
+  scoped_search on: [:first_name, :last_name]
 
   def full_name
-    [ first_name, middle_name, last_name ].compact.join(' ')
+    [first_name, middle_name, last_name].compact.join(' ')
   end
 end

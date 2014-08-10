@@ -1,3 +1,4 @@
+# The main controller for projects
 class ProjectsController < ApplicationController
   include DefaultResponses
   include DefaultSearch
@@ -21,7 +22,11 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @searched_people = params.has_key?(:people_search) ? Person.search_for(params[:people_search], :order => params[:people_order]) : []
+    if params.key?(:people_search)
+      @searched_people = Person.search_for(params[:people_search], order: params[:people_order])
+    else
+      @searched_people = []
+    end
   end
 
   def add_person
@@ -59,13 +64,15 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_params
-      params.require(:project).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = Project.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white listed
+  # through.
+  def project_params
+    params.require(:project).permit(:name)
+  end
 end

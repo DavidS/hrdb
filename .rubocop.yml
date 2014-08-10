@@ -1,0 +1,20 @@
+AllCops:
+  RunRailsCops: true
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'spec/**/*'
+
+Style/LineLength:
+  Max: 100
+
+# Hubris, one of the Three Great Virtues
+# http://c2.com/cgi/wiki?LazinessImpatienceHubris
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
