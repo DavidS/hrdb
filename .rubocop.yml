@@ -11,6 +11,11 @@ AllCops:
     - 'spec/**/*'
     - 'vendor/**/*'
 
+# This is only relevant for 1.9, which I don't care that much about.
+Style/Encoding:
+  Enabled: false
+
+# VT100 is too oldschool, even for me.
 Style/LineLength:
   Max: 100
 
