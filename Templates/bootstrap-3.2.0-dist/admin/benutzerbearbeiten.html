@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="../css/eigene.css" rel="stylesheet">
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	  <nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="http://www.worldvision.at"><img src="../images/logo.png" alt="www.worldvision.at" height="50px" style="margin-top:-15px; margin-left:-10px"></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li><a href="../index.html">Übersicht</a></li>
+			<li><a href="../stundenzettel.html">Stundenzettel</a></li>
+			<li><a href="../urlaubsliste.html">Urlaubsliste</a></li>
+			<li><a href="../dienstreisen.html">Dienstreisen</a></li>
+			<li><a href="../projekte.html">Projekte</a></li>
+		  </ul>
+		  
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="../profil.html">Mein Profil</a></li>
+			<li class="active"><a href="../admin.html">Admin</a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	
+	<nav class="navbar navbar-inverse" role="navigation" style="margin-top:-21px; background-color:#ffd89a">
+	  <div class="container-fluid">
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color:#ffd89a">
+		  <ul class="nav navbar-nav">
+			<li class="active"><a href="benutzeruebersicht.html">Benutzer Übersicht</a></li>
+			<li><a href="neuerbenutzer.html">Neuer Benutzer</a></li>
+			<li><a href="urlaubeunddr.html">Urlaube und Dienstreisen</a></li>
+			<li><a href="statistik.html">Statistik</a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+    
+	<h1 align="center">Bearbeiten von: Christine Schmitt</h1>
+	
+	<div class="row">
+	  <div class="col-md-10"></div>
+	  <div class="col-md-2">
+		<button type="button" class="btn btn-warning">Speichern</button>
+	  </div>
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		Vorname:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Vorname">Vorname</label>
+			<input type="text" class="form-control input-sm" id="Vorname" placeholder="Christine">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Nachname:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Nachname">Nachname</label>
+			<input type="text" class="form-control input-sm" id="Nachname" placeholder="Schmitt">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Personalnummer:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Personalnummer">Personalnummer</label>
+			<input type="text" class="form-control input-sm" id="Personalnummer" placeholder="91">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-2"></div>
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		Benutzername:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Benutzername">Benutzername</label>
+			<input type="text" class="form-control input-sm" id="Benutzername" placeholder="CHSCHMIT">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Passwort:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Passwort">Passwort</label>
+			<input type="text" class="form-control input-sm" id="Passwort" placeholder="chsc2011WV$">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		SV-Nr.:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="SV-Nr.">SV-Nr.</label>
+			<input type="text" class="form-control input-sm" id="SV-Nr." placeholder="1791">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-2"></div>
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		E-Mail:
+	  </div>
+	  <div class="col-md-5">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="E-Mail">E-Mail</label>
+			<input type="text" class="form-control input-sm" id="E-Mail" placeholder="christine.schmitt@worldvision.at">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Geburtsdatum:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Geburtsdatum">Geburtsdatum</label>
+			<input type="text" class="form-control input-sm" id="Geburtsdatum" placeholder="28.02.1980">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-2"></div>
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		Adresse:
+	  </div>
+	  <div class="col-md-5">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Adresse1">Adresse1</label>
+			<input type="text" class="form-control input-sm" id="Adresse1" placeholder="Carminweg 6/9/13">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Alter:
+	  </div>
+	  <div class="col-md-2">
+		34 Jahre
+	  </div>
+	  <div class="col-md-2"></div>
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right"></div>
+	  <div class="col-md-8">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Adresse2">Adresse2</label>
+			<input type="text" class="form-control input-sm" id="Adresse2" placeholder="1210 Wien">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-2"></div>
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right"></div>
+	  <div class="col-md-8">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Adresse3">Adresse3</label>
+			<input type="text" class="form-control input-sm" id="Adresse3" placeholder=" ">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-2"></div>
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		Telefon priv.:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Telprivat">Telefon priv</label>
+			<input type="text" class="form-control input-sm" id="Telprivat" placeholder="0664 8260791">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		DW Firma:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="DWFirma">DW Firma</label>
+			<input type="text" class="form-control input-sm" id="DWFirma" placeholder="151">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Firmenhandy:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Firmenhandy">Firmenhandy</label>
+			<input type="text" class="form-control input-sm" id="Firmenhandy" placeholder="0664 8339403">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-2"></div>
+	</div>
+	
+	<br /><br />
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		Arbeitsbeginn:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Arbeitsbeginn">Arbeitsbeginn</label>
+			<input type="text" class="form-control input-sm" id="Arbeitsbeginn" placeholder="1.9.2011">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Gehalt:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Gehalt">Gehalt</label>
+			<input type="text" class="form-control input-sm" id="Gehalt" placeholder="2500">
+		  </div>
+		</form>
+	  </div>
+	   <div class="col-md-1" align="right">
+		Wochenstunden:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Wochenstunden">Wochenstunden</label>
+			<input type="text" class="form-control input-sm" id="Wochenstunden" placeholder="40">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-2">
+		8 Std./Tag
+	  </div>
+	  <div class="col-md-1"></div>
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		Montag:
+	  </div>
+	  <div class="col-md-1">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="MoStunden">MoStunden</label>
+			<input type="text" class="form-control input-sm" id="MoStunden" style="width:100px" placeholder="8">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Dienstag:
+	  </div>
+	  <div class="col-md-1">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="DiStunden">DiStunden</label>
+			<input type="text" class="form-control input-sm" id="DiStunden" style="width:100px" placeholder="8">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Mittwoch:
+	  </div>
+	  <div class="col-md-1">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="MiStunden">MiStunden</label>
+			<input type="text" class="form-control input-sm" id="MiStunden" style="width:100px" placeholder="8">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Donnerstag:
+	  </div>
+	  <div class="col-md-1">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="DoStunden">DoStunden</label>
+			<input type="text" class="form-control input-sm" id="DoStunden" style="width:100px" placeholder="8">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Freitag:
+	  </div>
+	  <div class="col-md-1">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="FrStunden">FrStunden</label>
+			<input type="text" class="form-control input-sm" id="FrStunden" style="width:100px" placeholder="8">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1">Test</div>
+	</div>
+
+	<br /><br />
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		Urlaub ges.:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Urlaub">Urlaub</label>
+			<input type="text" class="form-control input-sm" id="Urlaub" placeholder="25">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Bemerkung:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="Bemerkung">Bemerkung</label>
+			<input type="text" class="form-control input-sm" id="Bemerkung" placeholder=" ">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-5"></div>
+	</div>
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		Vorgesetzte/r:
+	  </div>
+	  <div class="col-md-2">
+	    <select class="form-control input-sm" style="width:176px">>
+		  <option>keine (GL) </option>
+		  <option>Bacher, Dieter</option>
+		  <option selected>Corti, Sebastian</option>
+		  <option>Nnamdi, Monika</option>
+		  <option>Schmitt, Christine</option>
+		  <option>Streit, Daniel</option>
+		  <option>... (MA mit Führungspos=Ja)</option>
+		</select>
+		
+	  </div>
+	  <div class="col-md-1" align="right">
+		Führungsposition:
+	  </div>
+	  <div class="col-md-2">
+		<select class="form-control input-sm" style="width:100px">
+		  <option selected>Ja</option>
+		  <option>Nein</option>
+		</select>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Rechte:
+	  </div>
+	  <div class="col-md-2">
+		<select class="form-control input-sm" style="width:176px">
+		  <option>MitarbeiterIn</option>
+		  <option selected>TeamleiterIn</option>
+		  <option>BereichsleiterIn</option>
+		  <option>EA-KoordinatorIn</option>
+		  <option>GeschäftsführerIn</option>
+		</select>
+	  </div>
+	  <div class="col-md-2"></div>
+	</div>
+	
+	<br /><br />
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" align="right">
+		Kinder:
+	  </div>
+	  <div class="col-md-1" align="right">
+		Name:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="KindName">KindName</label>
+			<input type="text" class="form-control input-sm" id="KindName" placeholder="Miku">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Geburtsdatum:
+	  </div>
+	  <div class="col-md-2">
+		<form class="form-inline" role="form">
+		  <div class="form-group">
+			<label class="sr-only" for="KindGeburt">KindGeburt</label>
+			<input type="text" class="form-control input-sm" id="KindGeburt" placeholder="17.5.2011">
+		  </div>
+		</form>
+	  </div>
+	  <div class="col-md-1" align="right">
+		Alter:
+	  </div>
+	  <div class="col-md-1">
+		3 Jahre
+	  </div>
+	  <div class="col-md-1">
+		<button type="button" class="btn btn-success">+</button>
+	  </div>
+	  <div class="col-md-1"></div>
+	</div>
+	
+	<br /><br />
+	
+	<div class="row">
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1"></div>
+		<button type="button" class="btn btn-warning">Speichern</button>
+	  </div>
+	  <div class="col-md-10"></div>
+	</div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
