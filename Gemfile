@@ -72,3 +72,8 @@ gem "scoped_search"
 
 # required on windows
 gem "tzinfo-data"
+
+# Styling with style
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails", '~> 3.2.0'
