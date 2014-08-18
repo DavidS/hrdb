@@ -72,3 +72,7 @@ gem "scoped_search"
 
 # required on windows
 gem "tzinfo-data"
+
+# Style with style
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'

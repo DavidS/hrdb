@@ -1,0 +1,16 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap/theme";
+
+.navbar-default .navbar-nav > .active > a {
+  background-image: linear-gradient(to bottom, #ff6600 0%, #ffd89a 100%);
+}
+
+.navbar-inverse {
+  border-color: #ffd89a;
+  background-image: linear-gradient(to bottom, #ffd89a 0%, #ffd89a 100%);
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+  background-image: linear-gradient(to bottom, #ff6600 0%, #ffbb00 100%);
+}
