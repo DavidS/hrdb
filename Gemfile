@@ -41,6 +41,7 @@ group :test do
   # required for travis
   gem 'rake'
   gem "codeclimate-test-reporter"
+  gem 'coveralls'
 end
 
 # add gems that are both used for development and test
