@@ -3,7 +3,8 @@
 A little rails app to track people, projects and spent effort.
 
 {<img src="https://travis-ci.org/DavidS/hrdb.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/DavidS/hrdb]
-{<img src="https://codeclimate.com/github/DavidS/hrdb.png" />}[https://codeclimate.com/github/DavidS/hrdb]
-{<img src="https://codeclimate.com/github/DavidS/hrdb/coverage.png" />}[https://codeclimate.com/github/DavidS/hrdb]
+{<img src="https://codeclimate.com/github/DavidS/hrdb.png" alt="Code Climate" />}[https://codeclimate.com/github/DavidS/hrdb]
+{<img src="https://codeclimate.com/github/DavidS/hrdb/coverage.png" alt="Code Coverage" />}[https://codeclimate.com/github/DavidS/hrdb]
+{<img src="https://gemnasium.com/DavidS/hrdb.svg" alt="Dependency Status" />}[https://gemnasium.com/DavidS/hrdb]
 
 
